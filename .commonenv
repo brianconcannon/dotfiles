@@ -2,7 +2,7 @@ UNAME=$(uname)
 source $HOME/.commonfuncs
 export LANG=en_US.UTF-8
 export PAGER=less
-export LESS="-iRMSx4 -FX"
+export LESS="-iRMSx4"
 #export MANPATH=`manpath`
 #export RSYNC_ICONV=UTF8-MAC
 export RSYNC_PASSWORD=ruby
