@@ -5,8 +5,8 @@
 	user = YOUR_GITHUB_USERNAME
 	token = YOUR_TOKEN_HERE
 [user]
-    name = David Blewett
-    email = davidb@sixfeetup.com
+    name = Brian Concannon
+    email = brian.concannon@crowdstrike.com 
 	excludesfile = ~/.gitignore
 [color]
     ui = auto
