@@ -87,7 +87,7 @@ elif [ $UNAME = 'SunOS' ]; then
 fi
 
 # show me everything
-alias ll='ls -al'
+alias ll='ls -l'
 # sort by size
 alias lss='ll -Sr'
 # sort by date modified
