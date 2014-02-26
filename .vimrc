@@ -185,6 +185,15 @@ map <silent> <leader>\ :set wrap!<CR>
 " turn off smart indentation when pasting
 set pastetoggle=<F2>
 
+"set clipboard+=unnamed  " use the clipboards of vim and win
+command! -nargs=0 PBCopy call PBCopy(@")
+
+function! PBCopy(text)
+    silent !clear
+    silent execute '!echo ' . shellescape(a:text, 1) . ' | pbcopy'
+    silent execute ':redraw!'
+endfunction
+
 " Searching                                                    {{{1
 " -----------------------------------------------------------------
 
