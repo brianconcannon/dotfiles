@@ -83,7 +83,7 @@ function history-search-end {
 }
 
 function pbcopy() {
-    nc localhost 2224
+    nc localhost 2225
 }
 
 zle -N history-beginning-search-backward-end history-search-end
