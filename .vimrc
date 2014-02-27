@@ -465,11 +465,6 @@ let g:fuzzy_ignore = "*.png;*.PNG;*.pyc;*.pyo;*.JPG;*.jpg;*.GIF;*.gif;.svn/**;.g
 " Search for a tag with fuzzyFinder
 "nmap <leader>ft :FufTag<Space>
 
-" Lodgeit                                                      {{{2
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let g:lodgeit_url = "https://paste.sixfeetup.com"
-let g:lodgeit_username = "davidb"
-let g:lodgeit_secure = 1
 
 " Lusty Juggler                                                {{{2
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
