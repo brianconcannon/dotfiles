@@ -285,6 +285,8 @@ ColorSwitcher g:dark_theme
 " switch between light and dark colors
 map <silent> <leader>c :ColorSwitcher<CR>
 
+au BufNewFile,BufRead *.hbs set filetype=html
+
 " Custom functions and commands                                {{{1
 " -----------------------------------------------------------------
 
