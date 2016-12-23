@@ -78,14 +78,6 @@ for actual_dotfile in $HOME/.dotfiles/.*
 #       aren't under version control.
 ###################################################################
 
-# take care of the .subversion/config file
-# -----------------------------------------------------------------
-actual_dotfile="$dotfiles_loc/svn_config"
-dotfile="config"
-to_create="$HOME/.subversion/$dotfile"
-# actually create/remove the link
-linkDotfile $dotfile $to_create $actual_dotfile
-
 # take care of the .ssh/config file
 # -----------------------------------------------------------------
 actual_dotfile="$dotfiles_loc/ssh_config"
@@ -147,15 +139,9 @@ Deleting them will remove them immediately
         done
     
     DIRS_TO_MAKE=(
-        "$HOME"/bin
         "$HOME"/.backup
         "$HOME"/.backup/vim/swap
         "$HOME"/.virtualenvs
-        "$HOME"/.buildout
-        "$HOME"/.buildout/eggs
-        "$HOME"/.buildout/downloads
-        "$HOME"/.buildout/zope
-        "$HOME"/.buildout/extends
     )
     
     # create the $DIRS_TO_MAKE
@@ -185,83 +171,6 @@ Deleting them will remove them immediately
     for dir in "${DIRS_TO_MAKE[@]}"
         do
             processDotDir $dir
-        done
-    
-    # create a buildout directory structure
-    # -------------------------------------------------------------
-    BUILDOUT_DIR="$HOME"/.buildout
-    if [[ -d "$BUILDOUT_DIR" ]] && [ ! -e "$BUILDOUT_DIR/default.cfg" ]; then
-        # create the default.cfg file
-        cat > $BUILDOUT_DIR/default.cfg <<EOF
-#[buildout]
-#eggs-directory = $HOME/.buildout/eggs
-#download-cache = $HOME/.buildout/downloads
-#zope-directory = $HOME/.buildout/zope
-#extends-cache = $HOME/.buildout/extends
-
-#[instance]
-#event-log-level = debug
-EOF
-        # let the person know they can modify the files
-        echo
-        echo "A default buildout config has been set up for you in $BUILDOUT_DIR"
-        echo "You can modify the $BUILDOUT_DIR/default.cfg to your liking"
-        echo
-    fi
-
-    FILES_TO_MAKE=(
-        "$HOME"/.pypirc
-    )
-    
-    # create some uncontrolled files
-    # -------------------------------------------------------------
-    processDotFiles() {
-        local dot_file
-        dot_file=$1
-        if [ "$remove" = "cleanup" ]; then
-            if [ -e "$dot_file" ]; then
-                echo -n "Are you sure you want to delete $dot_file? [n]: "
-                read REMOVE_FILE
-                if [ "$REMOVE_FILE" = "y" ]; then
-                    rm "$dot_file"
-                    echo "Deleted $dot_file"
-                fi
-            fi
-        # if the file doesn't exist, let's create it with some content
-        elif [ ! -e "$dot_file" ]; then
-
-            # pypirc
-            if [ "$dot_file" = "$HOME/.pypirc" ]; then
-                (
-                cat <<EOF
-#[distutils]
-#index-servers = 
-#    pypi
-#    skillet
-#    plone.org
-#
-#[pypi]
-#Username: USERNAME
-#Password: PASSWORD
-#
-#[skillet]
-#repository: http://skillet.sixfeetup.com
-#Username: USERNAME
-#Password: PASSWORD
-#
-#[plone.org]
-#repository: http://plone.org/products
-#Username: USERNAME
-#Password: PASSWORD
-EOF
-) > "$dot_file"
-            fi
-    fi
-    }
-    
-    for dot_file in "${FILES_TO_MAKE[@]}"
-        do
-            processDotFiles $dot_file
         done
     
 fi

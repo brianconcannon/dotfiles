@@ -19,7 +19,6 @@ source $HOME/.commonrc
 # global aliases
 ################
 # disable the plonesite part in a buildout run, example: $ bin/buildout -N psef
-alias -g psef="plonesite:enabled=false"
 # get the site packages for your python, example: $ cd $(python2.5 site-packages)
 alias -g site_packages='-c "from distutils.sysconfig import get_python_lib; print get_python_lib()"'
 # some pipes
@@ -163,7 +162,7 @@ compinit -C
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # uncomment this to show when you aren't the current user
-ME="davidb"
+ME="brian"
 
 # use some crazy ass shell prompt
 # thanks to for the basis: http://aperiodic.net/phil/prompt/

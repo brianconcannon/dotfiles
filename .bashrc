@@ -40,25 +40,6 @@ shopt -s histappend
 # Make sure and set the $ME var
 PR_IMPOSTER=""
 
-# uncomment the following lines to show when you aren't
-# using your normal username
-
-#ME="clayton"
-#if [ $(whoami) != $ME ]; then
-#   PR_IMPOSTER="\n(\u)"
-#fi
-
-# prompt will look like this:
-#
-# Tue Apr 28 00:38 | ~/Desktop
-# clyde$
-#
-# and like this if I'm not me :)
-#
-# (notme)
-# Tue Apr 28 00:38 | ~/Desktop
-# clyde$
-
 PS1="$PR_IMPOSTER\n\d \A | \w\n\h\$ "
 
 # load up server specific extras
