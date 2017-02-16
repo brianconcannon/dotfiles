@@ -137,8 +137,8 @@ set wildignore+=*.pyc,*.pyo,CVS,.svn,.git,*.mo,.DS_Store,*.pt.cache,*.Python,*.o
 "set spell spelllang=en_us
 map <silent> <leader>s :set spell!<CR>
 
-" This setting will cause the cursor to very briefly jump to a 
-" brace/parenthese/bracket's "match" whenever you type a closing or 
+" This setting will cause the cursor to very briefly jump to a
+" brace/parenthese/bracket's "match" whenever you type a closing or
 " opening brace/parenthese/bracket.
 set showmatch
 
@@ -165,7 +165,7 @@ set number
 " shortcut to turn off line numbers
 map <silent> <leader>n :set number!<CR>
 "
-" By default, vim doesn't let the cursor stray beyond the defined text. This 
+" By default, vim doesn't let the cursor stray beyond the defined text. This
 " setting allows the cursor to freely roam anywhere it likes in command mode.
 " It feels weird at first but is quite useful.
 "set virtualedit=all
@@ -226,10 +226,10 @@ let g:light_theme='solarized'
 let g:dark_theme='solarized'
 
 let g:zenburn_high_Contrast = 1
-"let g:solarized_contrast = "high"
-"let g:solarized_termcolors=256
+let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
 " Use the "original" molokai theme colors instead of "dark"
-"let g:molokai_original=1
+let g:molokai_original=1
 
 " Command to call the ColorSwitch funciton
 command! -nargs=? -complete=customlist,s:completeColorSchemes ColorSwitcher :call s:colorSwitch(<q-args>)
@@ -733,7 +733,7 @@ if has("gui_running")
     " Default size of window
     set columns=145
     set lines=45
-    
+
     " automagically open NERDTree in a GUI
     autocmd VimEnter * exe 'NERDTreeToggle' | wincmd l
     " close the NERDTree when opening it's all text and vimperator
@@ -752,7 +752,7 @@ if has("gui_running")
 endif
 
 map <A-x> "+x
-map <A-c> "+y 
+map <A-c> "+y
 map <A-v> "+gp
 
 " Visually select the text that was last edited/pasted
